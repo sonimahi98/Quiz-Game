@@ -429,11 +429,12 @@ const optionsEl = document.getElementById("options");
 const scoreEl = document.getElementById("score");
 const nextBtnEl = document.getElementById("nextBtn");
 const subjectsEl = document.getElementById("subjects");
+const homeBg = document.getElementById("home-bg");
 const quizContentEl = document.getElementById("quiz-content");
 const qstnBlock = document.getElementById("qstn-block");
 const subTestHeadingEl = document.getElementById("sub-test-heading");
+const welcomeWordsEl = document.getElementById("welcome-words");
 
-console.log(subTestHeadingEl);
 
 const mathsBtn = document.getElementById("mathsBtn");
 const englishBtn = document.getElementById("englishBtn");
@@ -467,6 +468,8 @@ function startQuiz(subject) {
     if(quizContentEl.style.display==='flex'){
         quizContentEl.style.display="none";
     }
+    homeBg.style.display="none";
+    welcomeWordsEl.style.display="none";
     quizContentEl.style.display = "flex";
     console.log("test =" + subTestHeadingEl);
     const subCapitalized = subject[0].toUpperCase() + subject.slice(1)
@@ -481,9 +484,7 @@ function startQuiz(subject) {
 
 function showQuestion() {
     // destructuting the object
-    // const { correctAnswer, options, question, } = quesJSON[currentQuestion];
     const { correctAnswer, options, question, } = qstnArray[currentQuestion];
-
 
     // setting question text content
     // directly accessing 'question due to destructuring
@@ -503,18 +504,22 @@ function showQuestion() {
 
         // event handling on the button
         btn.addEventListener("click", () => {
+          btn.onclick =()=>{
+            btn.disabled = true;
+          }
             if (opt === correctAnswer) {
                 btn.style.background ="green";
                 score+=4;
 
+
             } else {
                 score = score - 1;
                 btn.style.background ="red";
-                console.log(redcolor);
 
             }
             scoreEl.textContent = `SCORE = ${score}/${totalScore}`;
-            nextQuestion();
+            // nextQuestion();
+
         });
 
     });

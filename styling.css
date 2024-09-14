@@ -1,25 +1,41 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 *{
     margin: 0;
     padding: 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #container{
 display: flex;
 flex-direction: row;
-height: 90vh;
+justify-content:flex-end;
+min-height: 88vh;
+width: 100%;
+}
 
+h1#app-logo{
+  display: flex;
+  align-items: center;
+  height:10vh;
+  width: 100vw;
+  background-color: #00305E;
+  color: white;
+  padding-left: 1rem;  
+  box-shadow: 0.25rem 0.25rem 0.5rem  gray ;
+  /* text-align: center; */
 }
 
 #subjects{
-    height: 100%;
-    width:20vw;
-    /* background-color: #5468ff; */
+    min-height: 90vh;
+    width: 20vw;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem;
     border-right: 1px solid lightgray;
 
 }
@@ -28,7 +44,8 @@ height: 90vh;
     
   align-items: center;
   appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  /* background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%); */
+  background-image: linear-gradient(to bottom, #5adaff 0%, #5468ff 100%);
   border: 0;
   border-radius: 6px;
   box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
@@ -43,8 +60,8 @@ height: 90vh;
   line-height: 1;
   list-style: none;
   overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   text-align: left;
   text-decoration: none;
@@ -54,7 +71,7 @@ height: 90vh;
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow,transform;
-  font-size: 18px;
+  font-size: 1.12rem;
 }
 
 #subjects button:focus {
@@ -71,39 +88,61 @@ height: 90vh;
   transform: translateY(2px);
 } 
 
-h1#app-logo{
-    height:8vh;
-    width:100%;
-    background-color: lightgray;
-    color: black;
-    padding-left: 1rem;  
-    box-shadow: 0.25rem 0.25rem 0.5rem  gray ;
-    /* text-align: center; */
+#home-bg{
+background: url("./images/vector-creative-illustration-happy-pink-600nw-2049601460.webp") no-repeat center center;
+margin-top: 3rem;
+background-size:contain;
+min-height: 80vh;
+height: 40vh;
+width: calc(100% - 20vw);
 }
 
 #quiz-content{
-    /* background: yellowgreen; */
     display: none;
-    width:calc(100% - 20vw);
-    height: 100%;
-    flex-direction: column;
-    
+    width: calc(100% - 20vw);
+    min-height: 90vh;
+    flex-direction: column; 
 }
-#sub-test-heading{
-  text-align: center;
+
+.top-heading{
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-evenly;
 }
+
+#heading-left,#heading-right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+#score{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: orange;
+  border-radius: 10px;
+  margin-right: 2rem;
+  height: 2rem;
+  width: 8rem;
+  font-weight: bold;
+}
+
 #questions{
-    height:2rem;
+    height:3rem;
     width:90%;
-    background-color: rgb(0, 179, 255);
-    font-size: large;
+    background-color:rgb(114, 182, 218);
+    font-size: 1.2rem;
     color:black;
     display: flex;
     align-items: center;
     align-content: center;
     border-radius: 1rem;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    margin:4rem 0rem 2rem 2rem;
+    margin:0rem 0rem 0rem 2rem;
     padding-left: 1rem;
 }
 
@@ -116,11 +155,15 @@ h1#app-logo{
 
 #options button {
     margin: 0.5rem 0; 
-    padding: 1rem; 
+    padding: 0.5rem; 
     font-size: 1.2rem; 
     border-radius: 5px; 
-    border: 1px solid #d5cece; 
-    background-color: rgb(168, 166, 166);
+    border: none;
+    background-color:lightgray;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+
 }
 
 #options button:hover {
@@ -129,15 +172,7 @@ h1#app-logo{
     cursor: pointer; 
 }
 
-#score{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: large;
-    margin: 0rem 0rem 2rem 12rem;
-    border: 1px solid #140a0a; 
-    width: 7rem;
-}
+
 
 #nextBtn button{
   background-color: orange;
@@ -170,3 +205,66 @@ h1#app-logo{
   -webkit-filter: saturate(0.2) opacity(0.5);
   cursor: not-allowed;
 }
+
+#welcome-words{
+  height: fit-content;
+  width:fit-content;
+  display: flex;
+  margin-right: 2rem;
+  position:absolute;
+  margin-top: 2rem;
+}
+
+#welcome-words h1{
+  color: #0c164d;
+  text-align: right !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-shadow: -3px 2px rgb(232, 235, 243);
+  /* font-weight: bold; */
+  text-align: justify;
+  border-right: 2px solid #01060b;
+  animation: 
+          typing 10s steps(40, end) infinite,
+          blink 0.7s step-end;
+  
+}
+      @keyframes typing {
+        0% { width: 0 }
+        50% { width: 100% }
+        100% { width: 0% }
+
+      }
+      
+      @keyframes blink {
+        from, to { border-color: transparent}
+        50% { border-color: #010b13; }
+      }
+
+      /* #welcome-words {
+        width: 100vw; 
+        position: relative;
+        overflow: hidden; 
+    }
+    
+    #welcome-words h3 {
+        display: inline-block;
+        font-family: 'Courier', monospace;
+        font-size: 24px;
+        white-space: nowrap; 
+        position: absolute;
+        animation: moveText 10s linear infinite;
+    }
+    
+    @keyframes moveText {
+        0% {
+            left: -100%; 
+        }
+        50% {
+            left: 50%; 
+        }
+        100% {
+            left: 100%;
+        }
+    }
+     */

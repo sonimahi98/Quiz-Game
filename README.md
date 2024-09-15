@@ -3,6 +3,7 @@
 This is a quiz application built using HTML, CSS, and JavaScript. The app dynamically displays questions from different subjects like General Knowledge, English, Maths, Science, Reasoning, Programming, Zoology, and Finance. The user can select an answer, and the application will provide immediate feedback by changing the button color and updating the score.
 
 **Features**
+
 ---Dynamic question rendering from JSON data.
 
 ---Supports multiple subjects (GK, English, Maths, Science, Reasoning, Programming, Zoology, and Finance).
